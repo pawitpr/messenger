@@ -11,7 +11,10 @@ import Input from "@/app/components/inputs/Input";
 import AuthSocialButton from './AuthSocialButton';
 import Button from "@/app/components/Button";
 import { toast } from "react-hot-toast";
+import localFont from 'next/font/local'
 
+const HeadFont = localFont({ src: './SF-Pro-Text-Regular.otf', weight:"28px" })
+const myFont = localFont({src: "./SF-Pro-Display-Regular.otf", weight: "28px"})
 type Variant = 'LOGIN' | 'REGISTER';
 
 const AuthForm = () => {
@@ -105,6 +108,7 @@ const AuthForm = () => {
   } 
 
   return ( 
+    <div className={myFont.className}>
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div 
         className="
@@ -131,6 +135,7 @@ const AuthForm = () => {
             />
           )}
           <Input 
+            
             disabled={isLoading}
             register={register}
             errors={errors}
@@ -140,6 +145,7 @@ const AuthForm = () => {
             type="email"
           />
           <Input 
+            
             disabled={isLoading}
             register={register}
             errors={errors}
@@ -148,7 +154,7 @@ const AuthForm = () => {
             label="Password" 
             type="password"
           />
-          <div>
+          <div className={HeadFont.className}>
             <Button disabled={isLoading} fullWidth type="submit">
               {variant === 'LOGIN' ? 'Sign in' : 'Register'}
             </Button>
@@ -201,12 +207,16 @@ const AuthForm = () => {
           </div>
           <div 
             onClick={toggleVariant} 
-            className="underline cursor-pointer"
+           
+            className={HeadFont.className}
           >
             {variant === 'LOGIN' ? 'Create an account' : 'Login'}
           </div>
+
+       
         </div>
       </div>
+    </div>
     </div>
   );
 }

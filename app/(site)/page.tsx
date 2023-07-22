@@ -1,6 +1,7 @@
 import Image from "next/image";
 import AuthForm from "./components/AuthForm";
 
+ 
 const Auth = () => {
   return (
     <div 
@@ -31,6 +32,7 @@ const Auth = () => {
             font-bold 
             tracking-tight 
             text-gray-900
+        
           "
           >
             Sign in to your account

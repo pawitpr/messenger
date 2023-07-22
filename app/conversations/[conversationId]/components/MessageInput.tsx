@@ -5,6 +5,8 @@ import {
   FieldValues, 
   UseFormRegister
 } from "react-hook-form";
+import localFont from 'next/font/local'
+const myFont = localFont({ src: './SF-Pro-Display-Regular.otf', weight:"28px" })
 
 interface MessageInputProps {
   placeholder?: string;
@@ -22,8 +24,10 @@ const MessageInput: React.FC<MessageInputProps> = ({
   required, 
   register, 
 }) => {
-  return (
-    <div className="relative w-full">
+  return (  
+     <div className="relative w-full">
+    <div className={myFont.className}>
+ 
       <input
         id={id}
         type={type}
@@ -40,8 +44,9 @@ const MessageInput: React.FC<MessageInputProps> = ({
           rounded-full
           focus:outline-none
         "
+
       />
-    </div>
+    </div></div>
    );
 }
  
